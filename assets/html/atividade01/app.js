@@ -27,8 +27,13 @@ let hourValue;
         console.log (' R$ 3,50 por hora.');
         hourValue = 3.5;
     } 
+let finalResult = (num01 * hourValue).toFixed(2);
+console.log ('valor: '+finalResult);
 
-console.log (num01 * hourValue);
+// Troca virgula por ponto se necessário
+finalResult = finalResult.replace(".", ",");
+    console.log ('coma adjustment: success');
+console.log (finalResult);
 
 // manda o valor para interface
 document.getElementById('final-result').classList.remove('is-hidden');
@@ -39,7 +44,7 @@ document.getElementById('final-result').scrollIntoView({
 });
 
 // manda o valor para interface
-document.getElementById('div-area').innerHTML = ('Os valores são iguais');
+document.getElementById('div-area').innerHTML = ('R$ '+ finalResult);
     console.log ('print result on html: success');
 
 });
